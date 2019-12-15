@@ -8,4 +8,4 @@ Just install it with
 vue add extensionpoints
 ```
 
-The plugin adds the dependency to your application and modifies a few files (namely main.js, and creates a plugins directory).
+The plugin adds the dependency to your application and modifies a few files (namely *main.js*, and creates a *plugins* directory).
