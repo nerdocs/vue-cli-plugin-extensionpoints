@@ -17,6 +17,8 @@ module.exports = (api) => {
   // add import
   api.injectImports(api.entryFile,
     `import Extensionpoints from 'vue-extensionpoints'`)
+  api.injectImports(api.entryFile,
+    `import plugins from '@/plugins'`)
 }
 
 module.exports.hooks = (api) => {
@@ -27,9 +29,9 @@ module.exports.hooks = (api) => {
     const lines = contentMain.split(/\r?\n/g)
 
     // if not already found, add Vue.use to file
-    if(lines.findIndex(line => line.match(/Vue.use\(Extensionpoints\)/)) < 0) {
+    if(lines.findIndex(line => line.match(/Vue.use\(Extensionpoints/)) < 0) {
       const renderIndex = lines.findIndex(line => line.match(/new Vue/))
-      lines[renderIndex] = `Vue.use(Extensionpoints)${EOL}${EOL}` + lines[renderIndex]
+      lines[renderIndex] = `Vue.use(Extensionpoints, plugins)${EOL}${EOL}` + lines[renderIndex]
       fs.writeFileSync(api.entryFile, lines.join(EOL), { encoding: 'utf-8' })
     }
   })
