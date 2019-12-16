@@ -16,13 +16,21 @@ module.exports = (api) => {
 
   // add import
   api.injectImports(api.entryFile,
-    `import VueExtensionpoints from 'vue-extensionpoints'`)
+    `import Extensionpoints from 'vue-extensionpoints'`)
 }
 
-// module.exports.hooks = (api) => {
-//   api.afterInvoke(() => {
-//     const fs = require('fs')
-//     const contentMain = fs.readFileSync(api.entryFile, { encoding: 'utf-8' })
-//     const lines = contentMain.split(/\r?\n/g)
-//   })
-// }
+module.exports.hooks = (api) => {
+  api.afterInvoke(() => {
+    const { EOL } = require('os')
+    const fs = require('fs')
+    const contentMain = fs.readFileSync(api.entryFile, { encoding: 'utf-8' })
+    const lines = contentMain.split(/\r?\n/g)
+
+    // if not already found, add Vue.use to file
+    if(lines.findIndex(line => line.match(/Vue.use\(Extensionpoints\)/)) < 0) {
+      const renderIndex = lines.findIndex(line => line.match(/new Vue/))
+      lines[renderIndex] = `Vue.use(Extensionpoints)${EOL}${EOL}` + lines[renderIndex]
+      fs.writeFileSync(api.entryFile, lines.join(EOL), { encoding: 'utf-8' })
+    }
+  })
+}
