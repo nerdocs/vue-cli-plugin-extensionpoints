@@ -5,7 +5,7 @@
 // A plugin is a named index of "hooks" pointing to a list of Vue components
 // implementing that hook.
 
-// import MyPlugin from '@/plugins/myplugin'
+import MyPlugin from '@/plugins/myplugin'
 //
 // or, directly here:
 //
@@ -16,6 +16,6 @@
 // }
 
 export default {
-  // MyPlugin,
+  MyPlugin,
   // FooPlugin
 }

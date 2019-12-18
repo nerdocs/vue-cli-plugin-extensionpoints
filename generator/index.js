@@ -1,12 +1,19 @@
 const fs = require('fs')
 
-module.exports = (api) => {
+module.exports = (api, options) => {
   api.extendPackage({
     dependencies: {
       'vue-extensionpoints': '^0.1.4',
     },
   })
-  api.render('./template');
+  api.render('./template',{
+    ...options,
+  });
+  if (options.addExample) {
+    api.render('./example', {
+      ...options,
+    });
+  }
 
   // add import
   api.injectImports(api.entryFile,
@@ -32,7 +39,7 @@ module.exports.hooks = (api) => {
     const appPath = api.resolve('src/App.vue')
     if (fs.existsSync(appPath)) {
       let content = fs.readFileSync(appPath, { encoding: 'utf8' })
-      content = content.replace(/HelloWorld/gi, 'ExtensionpointExample')
+      content = content.replace(/HelloWorld\b/gi, 'HelloWorldWithPlugins')
       fs.writeFileSync(appPath, content)
     }
   })
