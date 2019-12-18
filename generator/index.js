@@ -6,13 +6,7 @@ module.exports = (api) => {
       'vue-extensionpoints': '^0.1.4',
     },
   })
-  const appPath = api.resolve('src/App.vue')
-  if (fs.existsSync(appPath)) {
-    let content = fs.readFileSync(appPath, { encoding: 'utf8' })
-    content = content.replace(/HelloWorld/gi, 'ExtensionpointExample')
-    fs.writeFileSync(appPath, content, { encoding: 'utf8' })
-  }
-  api.render('./template')
+  api.render('./template');
 
   // add import
   api.injectImports(api.entryFile,
@@ -33,6 +27,13 @@ module.exports.hooks = (api) => {
       const renderIndex = lines.findIndex(line => line.match(/new Vue/))
       lines[renderIndex] = `Vue.use(Extensionpoints, plugins)${EOL}${EOL}` + lines[renderIndex]
       fs.writeFileSync(api.entryFile, lines.join(EOL), { encoding: 'utf-8' })
+    }
+
+    const appPath = api.resolve('src/App.vue')
+    if (fs.existsSync(appPath)) {
+      let content = fs.readFileSync(appPath, { encoding: 'utf8' })
+      content = content.replace(/HelloWorld/gi, 'ExtensionpointExample')
+      fs.writeFileSync(appPath, content)
     }
   })
 }
