@@ -4,11 +4,11 @@
   "description": "Vue CLI plugin for adding extensionpoints",
   "main": "index.js",
   "author": {
-      "name": "Christian González",
-      "email": "christian.gonzalez@nerdocs.at"
+    "name": "Christian González",
+    "email": "christian.gonzalez@nerdocs.at"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\""
   },
   "repository": {
     "type": "git",
