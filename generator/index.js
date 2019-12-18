@@ -3,7 +3,7 @@ const fs = require('fs')
 module.exports = (api) => {
   api.extendPackage({
     dependencies: {
-      'vue-extensionpoints': '^0.1.0',
+      'vue-extensionpoints': '^0.1.4',
     },
   })
   const appPath = api.resolve('src/App.vue')
