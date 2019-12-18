@@ -1,18 +1,21 @@
 // plugins.js
 
 // this file should be generated automatically by your plugin system
-// it should export a default object which just refers to vue
-// components:
+// It should export a default object which contains  plugins.
+// A plugin is a named index of "hooks" pointing to a list of Vue components
+// implementing that hook.
 
-// import foo from '@/plugins/foo'
-// var bar = {
+// import MyPlugin from '@/plugins/myplugin'
+//
+// or, directly here:
+//
+// var BarPlugin = {
 //   hooks: {
-//     "baz-hook": MyComponent,
 //     "bar-hook": [BarComponent, BeezComponent]
 //   }
 // }
 
 export default {
-  // foo,
-  // bar
+  // MyPlugin,
+  // BarPlugin
 }
