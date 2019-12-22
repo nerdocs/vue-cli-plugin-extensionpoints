@@ -3,7 +3,7 @@ const fs = require('fs')
 module.exports = (api, options) => {
   api.extendPackage({
     dependencies: {
-      'vue-extensionpoints': '^0.1.4',
+      'vue-extensionpoints': '^0.1.5',
     },
   })
   api.render('./template',{
