@@ -1,6 +1,6 @@
 {
   "name": "vue-cli-plugin-extensionpoints",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Vue CLI plugin for adding extensionpoints",
   "main": "index.js",
   "author": {
