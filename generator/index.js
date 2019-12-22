@@ -32,7 +32,7 @@ module.exports.hooks = (api) => {
     // if not already found, add Vue.use to file
     if(lines.findIndex(line => line.match(/Vue.use\(Extensionpoints/)) < 0) {
       const renderIndex = lines.findIndex(line => line.match(/new Vue/))
-      lines[renderIndex] = `Vue.use(Extensionpoints, plugins)${EOL}${EOL}` + lines[renderIndex]
+      lines[renderIndex] = `Vue.use(Extensionpoints, {plugins})${EOL}${EOL}` + lines[renderIndex]
       fs.writeFileSync(api.entryFile, lines.join(EOL), { encoding: 'utf-8' })
     }
 
