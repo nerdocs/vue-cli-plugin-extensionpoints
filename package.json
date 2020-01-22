@@ -1,6 +1,6 @@
 {
   "name": "vue-cli-plugin-extensions",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "description": "Vue CLI plugin for automatially adding vue-extensions to a project",
   "main": "index.js",
   "author": {
