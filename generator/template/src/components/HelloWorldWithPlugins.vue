@@ -1,9 +1,9 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h3>Installed Plugins</h3>
+    <h3>Installed Extensions</h3>
     <ul>
-      <extensionpoint hook="plugins"/>
+      <extensionpoint hook="app-plugins"/>
     </ul>
     <h3>Essential Links</h3>
     <ul>

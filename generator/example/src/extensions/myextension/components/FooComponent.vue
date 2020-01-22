@@ -1,5 +1,5 @@
 <template>
     <div>
-        Greetings from the Foo plugin!
+        Greetings from the Foo extension!
     </div>
 </template>

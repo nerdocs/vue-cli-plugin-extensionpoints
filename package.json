@@ -1,7 +1,7 @@
 {
-  "name": "vue-cli-plugin-extensionpoints",
+  "name": "vue-cli-plugin-extensions",
   "version": "0.1.7",
-  "description": "Vue CLI plugin for adding extensionpoints",
+  "description": "Vue CLI plugin for automatially adding vue-extensions to a project",
   "main": "index.js",
   "author": {
     "name": "Christian González",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nerdocs/vue-cli-plugin-extensionpoints.git"
+    "url": "git+https://github.com/nerdocs/vue-cli-plugin-extensions.git"
   },
   "keywords": [
     "vue",
@@ -21,7 +21,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nerdocs/vue-cli-plugin-extensionpoints/issues"
+    "url": "https://github.com/nerdocs/vue-cli-plugin-extensions/issues"
   },
-  "homepage": "https://github.com/nerdocs/vue-cli-plugin-extensionpoints#readme"
+  "homepage": "https://github.com/nerdocs/vue-cli-plugin-extensions#readme"
 }

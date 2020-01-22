@@ -3,7 +3,7 @@ const fs = require('fs')
 module.exports = (api, options) => {
   api.extendPackage({
     dependencies: {
-      'vue-extensionpoints': '^0.1.5',
+      'vue-extensions': '^0.2',
     },
   })
   api.render('./template',{
@@ -17,9 +17,9 @@ module.exports = (api, options) => {
 
   // add import
   api.injectImports(api.entryFile,
-    `import Extensionpoints from 'vue-extensionpoints'`)
+    `import Extensionpoints from 'vue-extensions'`)
   api.injectImports(api.entryFile,
-    `import plugins from '@/plugins'`)
+    `import AppExtensions from '@/extensions'`)
 }
 
 module.exports.hooks = (api) => {
@@ -32,7 +32,7 @@ module.exports.hooks = (api) => {
     // if not already found, add Vue.use to file
     if(lines.findIndex(line => line.match(/Vue.use\(Extensionpoints/)) < 0) {
       const renderIndex = lines.findIndex(line => line.match(/new Vue/))
-      lines[renderIndex] = `Vue.use(Extensionpoints, {plugins})${EOL}${EOL}` + lines[renderIndex]
+      lines[renderIndex] = `Vue.use(Extensionpoints, {extensions: AppExtensions})${EOL}${EOL}` + lines[renderIndex]
       fs.writeFileSync(api.entryFile, lines.join(EOL), { encoding: 'utf-8' })
     }
 
