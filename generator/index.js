@@ -42,5 +42,11 @@ module.exports.hooks = (api) => {
       content = content.replace(/HelloWorld\b/gi, 'HelloWorldWithPlugins')
       fs.writeFileSync(appPath, content)
     }
+
+    // TODO: check if runtimeCompiler is enabled.
+    // config = import('vue.config')
+    console.log(`Please make sure that Vue's runtime compiler is enabled if you
+      plan to use template strings or single file components.\n
+      You can add 'runtimeCompiler: true' in your vue.config.js file.`)
   })
 }
