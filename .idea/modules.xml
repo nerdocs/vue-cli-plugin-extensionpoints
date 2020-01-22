@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$USER_HOME$/tmp/test2345/.idea/test2345.iml" filepath="$USER_HOME$/tmp/test2345/.idea/test2345.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/vue-cli-plugin-extensionpoints.iml" filepath="$PROJECT_DIR$/.idea/vue-cli-plugin-extensionpoints.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../vue-extensionpoints/.idea/vue-extensions.iml" filepath="$PROJECT_DIR$/../vue-extensionpoints/.idea/vue-extensions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/vue-cli-plugin-extensions.iml" filepath="$PROJECT_DIR$/.idea/vue-cli-plugin-extensions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../vue-extensions/.idea/vue-extensions.iml" filepath="$PROJECT_DIR$/../vue-extensions/.idea/vue-extensions.iml" />
     </modules>
   </component>
 </project>
